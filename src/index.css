@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url('../assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+  --primary: hsl(14, 86%, 42%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-900: hsl(14, 65%, 9%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-50: hsl(20, 50%, 98%);
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.product-price {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.product-name {
+  font-weight: 600;
+  color: var(--rose-900)
+}
+
+.product-category {
+  font-size: 14px;
+  color: var(--rose-400);
+}
+
+.button {
+  background-color: var(--rose-100);
+  padding: 15px 20px
+}
+
+.icon {
+  height: 40px;
+}
