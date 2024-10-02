@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../assets/fonts/RedHatText-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+$primary-color: hsl(14, 86%, 42%);
+$rose-400: hsl(7, 20%, 60%);
+$rose-900: hsl(14, 65%, 9%);
+$rose-100: hsl(13, 31%, 94%);
+$rose-50: hsl(20, 50%, 98%);
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.container {
+  width: 150px;
+  height: 160px;
+  background-color: grey;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.product-price {
+  color: $primary-color;
+  font-weight: 700;
+}
+
+.product-name {
+  font-weight: 600;
+  color: $rose-900;
+}
+
+.product-category {
+  font-size: 14px;
+  color: $rose-400;
+}
+
+.button {
+  background-color: $rose-100;
+  padding: 15px 20px;
+  border-radius: 16px;
+}
+
+.icon {
+  height: 40px;
+}
