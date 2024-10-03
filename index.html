@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/index.scss" />
-    <title>Document</title>
-  </head>
+<html lang="pt-br">
 
-  <body>
-    <main class="flex p-12 gap-6">
-      <div class="flex flex-col">
-        <h1>Desserts</h1>
-        <ul id="product-list" class="flex flex-wrap space-x-6"></ul>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/styles/index.scss">
+  <title>Document</title>
+</head>
 
-      <div class="bg-white p-5 border border-black">
-        <h2>Your Cart (7)</h2>
-        <ul>
-          <li>
-            <span>1x</span>
-            <span>@$5.50</span>
-            <span>$5.50</span>
-          </li>
-          <li>
-            <span>4x</span>
-            <span>@$7.00</span>
-            <span>$28.00</span>
-          </li>
-        </ul>
+<body>
 
-        <div>
-          <span>Order Total</span>
-          <span>$46.50</span>
-        </div>
-      </div>
-    </main>
+  <main class="flex p-12 gap-6">
+    <div class="flex flex-col ">
+      <h1>Desserts</h1>
+      <ul id="product-list" class="grid grid-cols-3 gap-6">
+      </ul>
+    </div>
 
-    <script type="module" src="./src/app.ts"></script>
-  </body>
+    <div id="cart" class="bg-white h-fit p-5 border border-black">
+      <h2>Your Cart (<span>0</span>)</h2>
+      <ul></ul>
+  </main>
+
+  <script type="module" src="./src/app.ts"></script>
+
+</body>
+
 </html>
