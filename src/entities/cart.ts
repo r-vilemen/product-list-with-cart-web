@@ -30,9 +30,12 @@ export class Cart {
       this._products.push(product);
     }
 
+    // Atualiza o valor total da compra
     this.calculateTotal();
 
+    // Atualiza o carrinho de compras no HTML
     this.toHTML();
+    // console.log(JSON.parse(JSON.stringify(Cart._products)));
   }
 
   static toHTML() {
