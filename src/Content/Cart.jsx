@@ -8,7 +8,6 @@ import OrderConfirmed from "./OrderConfirmed";
 function Cart({ cartItems, removeFromCart }) {
   const [orderConfirmed, setOrderConfirmed] = useState(false);
 
-  // Memoriza o total de itens e o valor total do pedido
   const totals = useMemo(() => {
     return cartItems.reduce(
       (acc, item) => {
@@ -48,7 +47,7 @@ function Cart({ cartItems, removeFromCart }) {
 
           {cartItems.map((item) => (
             <CartItem
-              key={item.name} // Substituir por item.id se existir
+              key={item.name}
               item={item}
               removeFromCart={removeFromCart}
             />
@@ -75,7 +74,6 @@ function Cart({ cartItems, removeFromCart }) {
   );
 }
 
-// Componente separado para o item do carrinho
 function CartItem({ item, removeFromCart }) {
   return (
     <div className="cart--Order">
