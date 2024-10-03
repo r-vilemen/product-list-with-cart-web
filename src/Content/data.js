@@ -1,4 +1,3 @@
-// src/data/data.js
 import waffleThumbnail from "../assets/images/image-waffle-thumbnail.jpg";
 import waffleMobile from "../assets/images/image-waffle-mobile.jpg";
 import waffleTablet from "../assets/images/image-waffle-tablet.jpg";
@@ -36,107 +35,106 @@ import pannaCottaMobile from "../assets/images/image-panna-cotta-mobile.jpg";
 import pannaCottaTablet from "../assets/images/image-panna-cotta-tablet.jpg";
 import pannaCottaDesktop from "../assets/images/image-panna-cotta-desktop.jpg";
 
-
 const data = [
-    {
-        image: {
-            thumbnail: waffleThumbnail,
-            mobile: waffleMobile,
-            tablet: waffleTablet,
-            desktop: waffleDesktop
-        },
-        name: "Waffle with Berries",
-        category: "Waffle",
-        price: 6.50
+  {
+    image: {
+      thumbnail: waffleThumbnail,
+      mobile: waffleMobile,
+      tablet: waffleTablet,
+      desktop: waffleDesktop,
     },
-    {
-        image: {
-            thumbnail: cremeBruleeThumbnail,
-            mobile: cremeBruleeMobile,
-            tablet: cremeBruleeTablet,
-            desktop: cremeBruleeDesktop
-        },
-        name: "Vanilla Bean Crème Brûlée",
-        category: "Crème Brûlée",
-        price: 7.00
+    name: "Waffle with Berries",
+    category: "Waffle",
+    price: 6.5,
+  },
+  {
+    image: {
+      thumbnail: cremeBruleeThumbnail,
+      mobile: cremeBruleeMobile,
+      tablet: cremeBruleeTablet,
+      desktop: cremeBruleeDesktop,
     },
-    {
-        image: {
-            thumbnail: macaronThumbnail,
-            mobile: macaronMobile,
-            tablet: macaronTablet,
-            desktop: macaronDesktop
-        },
-        name: "Macaron Mix of Five",
-        category: "Macaron",
-        price: 8.00
+    name: "Vanilla Bean Crème Brûlée",
+    category: "Crème Brûlée",
+    price: 7.0,
+  },
+  {
+    image: {
+      thumbnail: macaronThumbnail,
+      mobile: macaronMobile,
+      tablet: macaronTablet,
+      desktop: macaronDesktop,
     },
-    {
-        image: {
-            thumbnail: tiramisuThumbnail,
-            mobile: tiramisuMobile,
-            tablet: tiramisuTablet,
-            desktop: tiramisuDesktop
-        },
-        name: "Classic Tiramisu",
-        category: "Tiramisu",
-        price: 5.50
+    name: "Macaron Mix of Five",
+    category: "Macaron",
+    price: 8.0,
+  },
+  {
+    image: {
+      thumbnail: tiramisuThumbnail,
+      mobile: tiramisuMobile,
+      tablet: tiramisuTablet,
+      desktop: tiramisuDesktop,
     },
-    {
-        image: {
-            thumbnail: baklavaThumbnail,
-            mobile: baklavaMobile,
-            tablet: baklavaTablet,
-            desktop: baklavaDesktop
-        },
-        name: "Pistachio Baklava",
-        category: "Baklava",
-        price: 4.00
+    name: "Classic Tiramisu",
+    category: "Tiramisu",
+    price: 5.5,
+  },
+  {
+    image: {
+      thumbnail: baklavaThumbnail,
+      mobile: baklavaMobile,
+      tablet: baklavaTablet,
+      desktop: baklavaDesktop,
     },
-    {
-        image: {
-            thumbnail: meringueThumbnail,
-            mobile: meringueMobile,
-            tablet: meringueTablet,
-            desktop: meringueDesktop
-        },
-        name: "Lemon Meringue Pie",
-        category: "Pie",
-        price: 5.00
+    name: "Pistachio Baklava",
+    category: "Baklava",
+    price: 4.0,
+  },
+  {
+    image: {
+      thumbnail: meringueThumbnail,
+      mobile: meringueMobile,
+      tablet: meringueTablet,
+      desktop: meringueDesktop,
     },
-    {
-        image: {
-            thumbnail: cakeThumbnail,
-            mobile: cakeMobile,
-            tablet: cakeTablet,
-            desktop: cakeDesktop
-        },
-        name: "Red Velvet Cake",
-        category: "Cake",
-        price: 4.50
+    name: "Lemon Meringue Pie",
+    category: "Pie",
+    price: 5.0,
+  },
+  {
+    image: {
+      thumbnail: cakeThumbnail,
+      mobile: cakeMobile,
+      tablet: cakeTablet,
+      desktop: cakeDesktop,
     },
-    {
-        image: {
-            thumbnail: brownieThumbnail,
-            mobile: brownieMobile,
-            tablet: brownieTablet,
-            desktop: brownieDesktop
-        },
-        name: "Salted Caramel Brownie",
-        category: "Brownie",
-        price: 4.50
+    name: "Red Velvet Cake",
+    category: "Cake",
+    price: 4.5,
+  },
+  {
+    image: {
+      thumbnail: brownieThumbnail,
+      mobile: brownieMobile,
+      tablet: brownieTablet,
+      desktop: brownieDesktop,
     },
-    {
-        image: {
-            thumbnail: pannaCottaThumbnail,
-            mobile: pannaCottaMobile,
-            tablet: pannaCottaTablet,
-            desktop: pannaCottaDesktop
-        },
-        name: "Vanilla Panna Cotta",
-        category: "Panna Cotta",
-        price: 6.50
-    }
+    name: "Salted Caramel Brownie",
+    category: "Brownie",
+    price: 4.5,
+  },
+  {
+    image: {
+      thumbnail: pannaCottaThumbnail,
+      mobile: pannaCottaMobile,
+      tablet: pannaCottaTablet,
+      desktop: pannaCottaDesktop,
+    },
+    name: "Vanilla Panna Cotta",
+    category: "Panna Cotta",
+    price: 6.5,
+  },
 ];
 
 export default data;
