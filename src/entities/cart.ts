@@ -30,9 +30,40 @@ export class Cart {
       this._products.push(product);
     }
 
-    // Atualiza o valor total da compra
     this.calculateTotal();
-    console.log(JSON.parse(JSON.stringify(Cart._products)));
+
+    this.toHTML();
+  }
+
+  static toHTML() {
+    const cartHTML = document.getElementById("cart");
+
+    if (!cartHTML) return;
+
+    const quantityTotalHTML = cartHTML.firstElementChild?.firstElementChild;
+
+    if (!quantityTotalHTML) return;
+
+    quantityTotalHTML.innerHTML = this._quantityTotal.toString();
+
+    const cartListHTML = cartHTML.querySelector("ul");
+
+    if (!cartListHTML) return;
+    cartListHTML.innerHTML = "";
+
+    for (const product of this._products) {
+      const liHTML = document.createElement("li");
+      liHTML.innerHTML = `
+        <span>${product.name}</span>
+        <div>
+          <span>${product.quantity}x</span>
+          <span>@$${product.price}</span>
+          <span>$${product.total}</span>
+        </div>
+      `;
+
+      cartListHTML.appendChild(liHTML);
+    }
   }
 
   static get products() {
