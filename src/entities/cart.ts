@@ -19,13 +19,14 @@ export class Cart {
     // Remove um produto do carrinho
     this._products = this._products.filter((item) => item.id !== product.id);
     this.calculateTotal();
+    this.toHTML(); // Atualiza a interface após remover o item
   }
 
   static addToCart(product: Product) {
     // Verificar se o produto existe no carrinho
     const productExists = this._products.includes(product);
 
-    // Se o produto não estiver no carrinho, execute
+    // Se o produto não estiver no carrinho, adicione
     if (!productExists) {
       this._products.push(product);
     }
@@ -35,7 +36,23 @@ export class Cart {
 
     // Atualiza o carrinho de compras no HTML
     this.toHTML();
-    // console.log(JSON.parse(JSON.stringify(Cart._products)));
+  }
+
+  static incrementQuantity(product: Product) {
+    product.incrementQuantity();
+    this.calculateTotal();
+    this.toHTML(); // Atualiza a interface
+  }
+
+  static decrementQuantity(product: Product) {
+    if (product.quantity > 1) {
+      product.decrementQuantity();
+    } else {
+      this.removeProduct(product); // Remove o produto se a quantidade for 0
+    }
+
+    this.calculateTotal();
+    this.toHTML(); // Atualiza a interface
   }
 
   static toHTML() {
@@ -61,12 +78,48 @@ export class Cart {
         <div>
           <span>${product.quantity}x</span>
           <span>@$${product.price}</span>
-          <span>$${product.total}</span>
+          <span>Total: $${product.total.toFixed(2)}</span>
+          <div>
+            <button class="decrement" data-id="${product.id}">-</button>
+            <button class="increment" data-id="${product.id}">+</button>
+            <button class="remove" data-id="${product.id}">Remove</button>
+          </div>
         </div>
       `;
 
       cartListHTML.appendChild(liHTML);
     }
+
+    // Adiciona event listeners aos botões de incrementar, decrementar e remover
+    cartListHTML.querySelectorAll(".increment").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const productId = (event.target as HTMLElement).getAttribute("data-id");
+        const product = this._products.find((p) => p.id === productId);
+        if (product) {
+          this.incrementQuantity(product);
+        }
+      });
+    });
+
+    cartListHTML.querySelectorAll(".decrement").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const productId = (event.target as HTMLElement).getAttribute("data-id");
+        const product = this._products.find((p) => p.id === productId);
+        if (product) {
+          this.decrementQuantity(product);
+        }
+      });
+    });
+
+    cartListHTML.querySelectorAll(".remove").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const productId = (event.target as HTMLElement).getAttribute("data-id");
+        const product = this._products.find((p) => p.id === productId);
+        if (product) {
+          this.removeProduct(product);
+        }
+      });
+    });
   }
 
   static get products() {

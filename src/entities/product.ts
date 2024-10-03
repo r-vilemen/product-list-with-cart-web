@@ -28,20 +28,48 @@ export class Product {
     productHTML.innerHTML = `
         <div class="flex flex-col h-[260px] w-[250px] border border-black">
           <div class="mb-6 relative h-full bg-red-400 border border-red-600">
-            <div id="button-add-to-cart" class="button center text-xs">Add to Cart</div>
+            <img src="${this._imageUrl}" alt="${
+      this._name
+    }" class="h-full w-full object-cover">
+            <div id="button-add-to-cart-${
+              this._id
+            }" class="button center text-xs">Add to Cart</div>
           </div>
 
           <div class="flex flex-col">
             <span class="product-category">${this._category}</span>
             <span class="product-name">${this._name}</span>
-            <span class="product-price">${this.price}</span>
+            <span class="product-price">$${this.price.toFixed(2)}</span>
+          </div>
+
+          <div class="flex justify-between mt-4">
+            <button id="decrement-${
+              this._id
+            }" class="bg-gray-300 px-2 py-1">-</button>
+            <span id="quantity-${this._id}" class="text-sm">${
+      this._quantity
+    }</span>
+            <button id="increment-${
+              this._id
+            }" class="bg-gray-300 px-2 py-1">+</button>
           </div>
         </div>
       `;
 
+    // Adicionar ao carrinho
     productHTML
-      .querySelector("#button-add-to-cart")
+      .querySelector(`#button-add-to-cart-${this._id}`)
       ?.addEventListener("click", () => this.incrementQuantity());
+
+    // Incrementar a quantidade
+    productHTML
+      .querySelector(`#increment-${this._id}`)
+      ?.addEventListener("click", () => this.incrementQuantity());
+
+    // Diminuir a quantidade
+    productHTML
+      .querySelector(`#decrement-${this._id}`)
+      ?.addEventListener("click", () => this.decrementQuantity());
 
     productListHTML.appendChild(productHTML);
   }
@@ -57,15 +85,31 @@ export class Product {
   incrementQuantity() {
     this._quantity += 1;
     this.updateTotal();
-
     Cart.addToCart(this);
+
+    // Atualizar a quantidade exibida no HTML
+    document.getElementById(`quantity-${this._id}`)!.textContent = String(
+      this._quantity
+    );
   }
 
   decrementQuantity() {
-    this._quantity -= 1;
-    this.updateTotal();
+    if (this._quantity > 0) {
+      this._quantity -= 1;
+      this.updateTotal();
 
-    Cart.toHTML();
+      // Se a quantidade for 0, remover do carrinho
+      if (this._quantity === 0) {
+        Cart.removeFromCart(this);
+      } else {
+        Cart.toHTML(); // Atualizar o carrinho
+      }
+
+      // Atualizar a quantidade exibida no HTML
+      document.getElementById(`quantity-${this._id}`)!.textContent = String(
+        this._quantity
+      );
+    }
   }
 
   get total() {
