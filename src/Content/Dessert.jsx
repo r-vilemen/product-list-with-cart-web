@@ -20,7 +20,7 @@ const Dessert = ({
         addToCart={addToCart}
         cartItems={cartItems}
         removeFromCart={removeFromCart}
-        image={image} // Passe a imagem para SetToCart
+        image={image}
       />
       <p>{category}</p>
       <h2>{name}</h2>
