@@ -27,7 +27,7 @@ export class Product {
 
     productHTML.innerHTML = `
         <div class="flex flex-col h-[260px] w-[250px] border border-black">
-          <div class="mb-6 relative h-full border border-red-600">
+          <div class="mb-6 relative h-full bg-red-400 border border-red-600">
             <div id="button-add-to-cart" class="button center text-xs">Add to Cart</div>
           </div>
 
@@ -55,7 +55,6 @@ export class Product {
   }
 
   incrementQuantity() {
-    console.log("entrou aqui");
     this._quantity += 1;
     this.updateTotal();
 
@@ -65,6 +64,8 @@ export class Product {
   decrementQuantity() {
     this._quantity -= 1;
     this.updateTotal();
+
+    Cart.toHTML();
   }
 
   get total() {
