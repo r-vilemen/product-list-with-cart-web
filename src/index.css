@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
 :root {
   /*Colors*/
@@ -36,12 +36,40 @@ body {
   padding: 30px;
 }
 
+/* add custom scrollbar in global project 👇🏼👇🏼👻 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--Rose50);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    100deg,
+    var(--Rose50) 1%,
+    var(--Red) 50%,
+    var(--Red) 100%
+  );
+  border-radius: 20px;
+}
+
+/* Text selected color 👇🏼👇🏼👻 */
+::-moz-selection {
+  color: var(--Rose50);
+  background: var(--Red);
+}
+::selection {
+  color: var(--Rose50);
+  background: var(--Red);
+}
+
 .container {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   width: 90vw;
- /* background-color: red;*/
 }
 
 .app--Container {
@@ -60,9 +88,7 @@ body {
   color: var(--Rose900);
 }
 
-
 /*  Cart  */
-
 
 .Cart {
   display: flex;
