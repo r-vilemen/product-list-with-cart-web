@@ -1,4 +1,3 @@
-// src/App.js
 import { useEffect, useState } from "react";
 import "./App.css";
 import data from "./Content/data.js";
