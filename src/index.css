@@ -154,7 +154,7 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--Rose400);
+  color: var(--Rose50);
 }
 
 footer h4 {
@@ -181,7 +181,7 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-  color: var(--Green);
+  color: var(--Rose50);
 }
 
 @media (max-width: 768px) {
